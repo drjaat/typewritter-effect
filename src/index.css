@@ -1,0 +1,34 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: black;
+  color: #BB86FC;
+}
+
+.custom-typewritter {
+  display: flex;
+  justify-content: center;
+}
+.custom-typewritter__header {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #03DAC5;
+}
+.custom-typewritter__text {
+  white-space: pre-wrap;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+}
+.custom-typewritter__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 2rem;
+}
