@@ -33,7 +33,6 @@
   * Make the pull request when ready and link this issue to your changes;
 #
 
-
 Typewriter is a collaborative project. Every contribution is encouraged and accepted! Participate!
 
 Team Typewritter 💙
