@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/typewritter-effect/static/css/main.fbb34840.css",
+    "main.js": "/typewritter-effect/static/js/main.fc04f109.js",
+    "index.html": "/typewritter-effect/index.html",
+    "main.fbb34840.css.map": "/typewritter-effect/static/css/main.fbb34840.css.map",
+    "main.fc04f109.js.map": "/typewritter-effect/static/js/main.fc04f109.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fbb34840.css",
+    "static/js/main.fc04f109.js"
+  ]
+}
