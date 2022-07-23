@@ -9,42 +9,19 @@ on:
 # Functions
 jobs:
   # Build Job
-  build:
-    # Name of the job
-    name: Build
-    # The OS to run the job on
+  build-and-deploy:
+    concurrency: ci-${{ github.ref }} # Recommended if you intend to make multiple deployments in quick succession.
     runs-on: ubuntu-latest
-    # Steps
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v2
-      - name: Install node 16
-        uses: actions/setup-node@v1
-        with:
-          node-version: 16.x
-      - name: Install NPM Dependencies
-        run: npm i
-      - name: Build Project
-        run: npm run build
-      - name: Upload artifact in order to deploy
-        uses: actions/upload-artifact@v2
-        with:
-          name: production-files
-          path: ./build
-  # Deploy Job
-  deploy:
-    name: Deploy
-    runs-on: ubuntu-latest
-    needs: build
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
 
-    steps:
-      - name: Download artifact
-        uses: actions/download-artifact@v2
+      - name: Install and Build 🔧 # This example project is built using npm and outputs the result to the 'build' folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.
+        run: |
+          npm ci
+          npm run build
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          name: production-files
-          path: ./dist
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build
+          folder: build # The folder the action should deploy.
